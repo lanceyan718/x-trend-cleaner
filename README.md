@@ -1,3 +1,5 @@
+![X-Trend-Cleaner Preview](assets/preview.png)
+
 # X-Trend-Cleaner 🦞 (OpenClaw Skill)
 
 [Chinese Documentation (中文文档)](#-中文文档) | [English Documentation](#-english-documentation)
