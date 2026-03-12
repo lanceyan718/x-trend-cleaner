@@ -12,7 +12,7 @@
 
 - **零算法污染**：不依赖主页 "为你推荐" 的个性化信息流（摆脱语言茧房），强制扫描全球多语种内容，真正获取全网事实热点。
 - **免 API Key**：不再受到高昂的 Twitter Developer API 计费或严格 Rate Limit 限制，仅需提取个人的网页版 `auth_token` 即可极速查询。
-- **十语种聚合**：当使用 `--type trending` 或 `--lang all` 时，后台在同一浏览器实例下并发搜索全球 10 大主流语言区块，进行无缝数据拼装、去重过滤、统一热度展示。
+- **五语种聚合**：当使用 `--type trending` 或 `--lang all` 时，后台在同一浏览器实例下并发搜索全球 5 大主流语言区块（英、中、日、韩、西），进行无缝数据拼装、去重过滤、统一热度展示。
 - **专为大模型设计 (LLM-Native)**：高度定制化的 Markdown 排版直出、丰富的交互语义映射封装，直接满足 OpenClaw 或各类 LLM Agent 上下文吸收的标准。
 - **智能时间窗与互动筛选**：灵活指定 `hours`, `min-likes`, `no-retweets`，确保洗出的数据是最精华、最具时效性的干货。
 
@@ -59,7 +59,7 @@ An advanced X (Twitter) search and analysis tool designed for LLM Agents (like O
 
 - **Zero Algorithmic Bias**: Does not rely on the "For You" timeline. It performs broad multi-language scans to capture real-time global hotspots.
 - **No API Key Required**: Bypass expensive Twitter Developer API costs. Uses personal web `auth_token` for high-speed queries.
-- **Global Aggregation**: When using `--type trending` or `--lang all`, it concurrently searches the top 10 global languages, deduplicating and ranking by engagement.
+- **Global Aggregation**: When using `--type trending` or `--lang all`, it concurrently searches the top 5 global languages (English, Chinese, Japanese, Korean, Spanish), deduplicating and ranking by engagement.
 - **LLM-Native Design**: Optimized Markdown output ready for OpenClaw or any LLM Agent context.
 - **Smart Filtering**: Custom `hours`, `min-likes`, and `no-retweets` filters ensure you only get the highest quality content.
 

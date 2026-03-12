@@ -10,8 +10,8 @@ class PlaywrightInterceptor:
     SearchTimeline / UserTweets GraphQL 数据包，跳过 DOM 层的广告和算法干预。
     """
 
-    # 全球聚合时默认并发的语言列表
-    DEFAULT_LANGS = ["en", "zh", "ja", "ko", "de", "fr", "es", "pt", "ar", "ru"]
+    # 全球聚合时默认并发的语言列表 (精简为 5 种最活跃语言以提高账号安全性)
+    DEFAULT_LANGS = ["en", "zh", "ja", "ko", "es"]
 
     def __init__(self, auth_token: str):
         self.auth_token = auth_token
@@ -48,13 +48,24 @@ class PlaywrightInterceptor:
             print(f"  [导航警告] {e}")
 
         # 模拟用户滚动，触发懒加载分页
-        await page.wait_for_timeout(2000)
-        for _ in range(scroll_rounds):
-            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-            await page.wait_for_timeout(2000)
-        await page.wait_for_timeout(settle_time * 1000)
-
-        await page.close()
+        try:
+            await page.wait_for_timeout(3000)
+            for _ in range(scroll_rounds):
+                if page.is_closed():
+                    break
+                try:
+                    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                except Exception as e:
+                    # 如果执行环境被销毁（比如跳转了），忽略并继续
+                    break
+                await page.wait_for_timeout(2000)
+            
+            if not page.is_closed():
+                await page.wait_for_timeout(settle_time * 1000)
+        finally:
+            if not page.is_closed():
+                await page.close()
+                
         return intercepted
 
     # ──────────────────────────────────────────────
