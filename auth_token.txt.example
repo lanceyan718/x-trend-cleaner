@@ -1,0 +1,13 @@
+# ⚠️ 注意: 请勿将您真实的 auth_token.txt 提交到公开的 GitHub 仓库！
+
+# 如何获取 X (Twitter) 的 auth_token？
+# 1. 在电脑浏览器（如 Chrome 或 Edge）上打开并登录 https://x.com
+# 2. 按 F12（或右键点击“检查”）打开开发者工具
+# 3. 点击顶部标签栏的 "Application" (应用)
+# 4. 在左侧栏找到 "Storage" -> "Cookies" -> "https://x.com"
+# 5. 在右侧列表中找到名为 "auth_token" 的行
+# 6. 双击它的 "Value" (值) 并复制那串很长的字符
+# 7. 将复制的内容粘贴在此文件下方（替换掉这行测试字符）
+# 8. 最后，将此文件重命名为 "auth_token.txt"
+
+YOUR_AUTH_TOKEN_HERE

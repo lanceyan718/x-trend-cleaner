@@ -1,0 +1,10 @@
+auth_token.txt
+__pycache__/
+*.pyc
+*.json
+.env
+.idea/
+.vscode/
+result_*.md
+test_*.py
+test_*.png
